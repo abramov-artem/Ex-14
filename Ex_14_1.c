@@ -1,87 +1,79 @@
 #include <stdio.h>
 
-int main()
-{
-    int arr1[20], arr2[20];
-    int i, n1, n2, ins1, ins2, del1, del2;
-    
-    printf("Введите размер первого множества:");
-    scanf("%d", &n1);
-    printf("Введите размер второго множества:");
-    scanf("%d", &n2);
-    
-    printf("Введите элементы первого множества:\n");
-    for (i=0; i<n1; i++){
-        printf("arr1[%d]= ", i);
-        scanf("%3d", &arr1[i]);
+int main(){
+  int arr[20], brr[20];
+  int i, p1, g1, n1, num1, ins, ins1, del1;
+  int p2, g2, ins2, del2, n2, k2, num2,  
+  
+  k1=0;
+  printf("размер\t");
+  scanf("%d", &n1);
+  
+  for(i=0; i<n1; i++){
+    printf("arr[%d]=", i);
+    scanf("%d", &arr[i]);
+  }
+
+  printf("количество элементов на удаление\t");
+  scanf("%d", &del1);
+  printf("количесвто элементов на добавление\t");
+  scanf("%d", &ins1);
+
+    while(del1>0){
+      printf("номер элемента на удаление:\t");
+      scanf("%d", &num1);
+      arr[num1]=0;
+      del1--;
     }
-    
-    printf("Введите элементы второго множества:\n");
-    for (i=0; i<n2; i++){
-        printf("arr2[%d]= ", i);
-        scanf("%3d", &arr2[i]);
+
+    while(ins1>0){
+      printf("значение добавляемого элемента:\t");
+      scanf("%d", &ins);
+      k1++;
+      arr[n1+k1-1]=ins;
+      ins1--;
     }
-    
-    printf("Если хотите добавить новый элемент первого множества, введите 1, иначе 0:");
-    scanf("%d", &ins1);
-    printf("Если хотите удалить элемент первого множества, введите 1, иначе 0:");
-    scanf("%d", &del1);
-    
-    if(ins1==1){
-        i=n1;
-        while (i>0){
-            arr1[i] = arr1[i-1];
-            i--;
-        }
-        printf("Введите новый элемент: ");
-        scanf("%3d", &arr1[0]);
+
+  k2=0;
+  printf("размер 2\t");
+  scanf("%d", &n2);
+  
+  for(i=0; i<n2; i++){
+    printf("brr[%d]=", i);
+    scanf("%d", &brr[i]);
+  }
+
+  printf("количество элементов на удаление 2\t");
+  scanf("%d", &del2);
+  printf("количесвто элементов на добавление 2\t");
+  scanf("%d", &ins2);
+
+    while(del2>0){
+      printf("номер элемента на удаление:\t");
+      scanf("%d", &num2);
+      brr[num2]=0;
+      del2--;
     }
-    if (del1==1){
-        if (ins1==0){
-            i=0;
-            while(i<n1){
-            arr1[i] = arr1[i+1];
-            i++;
-        }
-        }else if(ins1==1){
-            arr1[0]=0;
-        }
+
+    while(ins2>0){
+      printf("значение добавляемого элемента:\t");
+      scanf("%d", &ins);
+      k2++;
+      brr[n2+k2-1]=ins;
+      ins2--;
     }
-    
-    printf("Если хотите добавить новый элемент второго множества, введите 1, иначе 0:");
-    scanf("%d", &ins2);
-    printf("Если хотите удалить элемент второго множества, введите 1, иначе 0:");
-    scanf("%d", &del2);
-    
-    if(ins2==1){
-        i=n2;
-        while (i>0){
-            arr2[i] = arr2[i-1];
-            i--;
-        }
-        printf("Введите новый элемент: ");
-        scanf("%3d", &arr2[0]);
-    }
-    
-    if (del2==1){
-        if (ins2==0){
-            i=0;
-            while(i<n2){
-            arr2[i] = arr2[i+1];
-            i++;
-        }
-        }else if(ins2==1){
-            arr2[0]=0;
-        }
-    }
-    
-        printf("arr1 = ");
-        for (i=0; i<n1+ins1; i++){
-            printf("%3d", arr1[i]);
-        }
-        printf("\narr2 = ");
-        for (i=0; i<n2+ins2; i++){
-            printf("%3d", arr2[i]);
-        }
-    
+
+  
+  for(i=0; i<n1+k1; i++){
+    if(arr[i]!=0){
+      printf("arr[%d]=%2d ", i, arr[i]);
+    }  
+  }
+
+  printf("\n");
+  for(i=0; i<n2+k2; i++){
+    if(brr[i]!=0){
+      printf("brr[%d]=%2d ", i, brr[i]);
+    }  
+  }
 }
