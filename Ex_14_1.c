@@ -3,7 +3,7 @@
 int main(){
   int arr[20], brr[20];
   int i, p1, g1, n1, num1, ins, ins1, del1;
-  int p2, g2, ins2, del2, n2, k2, num2,  
+  int p2, g2, ins2, del2, n2, k2, num2; 
   
   k1=0;
   printf("размер\t");
