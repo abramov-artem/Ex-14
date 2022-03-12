@@ -3,10 +3,10 @@
 int main(){
   int arr[20], brr[20];
   int i, p1, g1, n1, num1, ins, ins1, del1;
-  int p2, g2, ins2, del2, n2, k2, num2; 
+  int p2, g2, ins2, del2, n2, k2, k1, num2; 
   
   k1=0;
-  printf("размер\t");
+  printf("размер 1-го множества:\t");
   scanf("%d", &n1);
   
   for(i=0; i<n1; i++){
@@ -14,9 +14,9 @@ int main(){
     scanf("%d", &arr[i]);
   }
 
-  printf("количество элементов на удаление\t");
+  printf("количество элементов на удаление:\t");
   scanf("%d", &del1);
-  printf("количесвто элементов на добавление\t");
+  printf("количесвто элементов на добавление:\t");
   scanf("%d", &ins1);
 
     while(del1>0){
@@ -35,7 +35,7 @@ int main(){
     }
 
   k2=0;
-  printf("размер 2\t");
+  printf("размер 2-го множества:\t");
   scanf("%d", &n2);
   
   for(i=0; i<n2; i++){
@@ -43,9 +43,9 @@ int main(){
     scanf("%d", &brr[i]);
   }
 
-  printf("количество элементов на удаление 2\t");
+  printf("количество элементов на удаление:\t");
   scanf("%d", &del2);
-  printf("количесвто элементов на добавление 2\t");
+  printf("количесвто элементов на добавление:\t");
   scanf("%d", &ins2);
 
     while(del2>0){
